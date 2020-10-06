@@ -28,12 +28,12 @@ class GridLayout extends StatelessWidget {
   List<Widget> get _items => children
       .asMap()
       .entries
-      .map((entrie) => Container(
-            width: _columnWidth * entrie.value.size +
-                gutter * (entrie.value.size - 1),
-            margin: EdgeInsets.only(left: entrie.key == 0 ? 0 : gutter),
-            child: entrie.value is GridLayoutItem
-                ? (entrie.value as GridLayoutItem).child
+      .map((entry) => Container(
+            width: _columnWidth * entry.value.size +
+                gutter * (entry.value.size - 1),
+            margin: EdgeInsets.only(left: entry.key == 0 ? 0 : gutter),
+            child: entry.value is GridLayoutItem
+                ? (entry.value as GridLayoutItem).child
                 : null,
           ))
       .toList();
