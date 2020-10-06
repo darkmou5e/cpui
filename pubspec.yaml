@@ -1,0 +1,6 @@
+name: cpui
+version: 0.0.1
+description: >-
+  This is the CPUI
+environment:
+  sdk: ">=2.7.0 <3.0.0"
