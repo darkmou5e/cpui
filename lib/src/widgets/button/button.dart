@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../colors/colors.dart';
 
@@ -32,12 +33,18 @@ class CPButtonState extends State<CPButton> {
         onTapUp: (_) => unpressButton(),
         onTapCancel: unpressButton,
         child: Container(
-            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
-            color: _isPressed ? widget.color : CPColors.black,
-            child: Text(
-              widget.caption,
-              style:
-                  TextStyle(color: _isPressed ? CPColors.black : widget.color),
-            )));
+            constraints: BoxConstraints(minHeight: 48, minWidth: 48),
+            color: Colors.transparent,
+            child: Center(
+                widthFactor: 1,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  color: _isPressed ? widget.color : CPColors.black,
+                  child: Text(widget.caption,
+                      style: GoogleFonts.exo2(
+                        color: _isPressed ? CPColors.black : widget.color,
+                        fontWeight: FontWeight.w300,
+                      )),
+                ))));
   }
 }
