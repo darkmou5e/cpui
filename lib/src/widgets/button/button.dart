@@ -32,6 +32,7 @@ class CPButtonState extends State<CPButton> {
         onTapUp: (_) => unpressButton(),
         onTapCancel: unpressButton,
         child: Container(
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
             color: _isPressed ? widget.color : CPColors.black,
             child: Text(
               widget.caption,
